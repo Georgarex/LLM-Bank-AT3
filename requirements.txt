@@ -1,0 +1,7 @@
+fastapi
+transformers
+sentence-transformers
+faiss-cpu
+PyPDF2
+datasets
+uvicorn
