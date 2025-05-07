@@ -1,15 +1,27 @@
-from sentence_transformers import SentenceTransformer
+import os
+import glob
 import faiss
-import pickle
+from sentence_transformers import SentenceTransformer
 
-# Load FAISS index and documents
-index = faiss.read_index("rag/faiss_index.idx")
-with open("rag/docs.pkl", "rb") as f:
-    docs = pickle.load(f)
+EMBED_DIM = 384
+MODEL_NAME = "paraphrase-MiniLM-L6-v2"
+CHUNKS_DIR = "rag/chunks/"
 
-embedder = SentenceTransformer("all-MiniLM-L6-v2")
+# 1. Load all chunk texts
+texts = []
+for path in sorted(glob.glob(f"{CHUNKS_DIR}/*.txt")):
+    with open(path) as f:
+        texts.append(f.read())
 
-def get_context(query, top_k=3):
-    query_vec = embedder.encode([query])
-    scores, indices = index.search(query_vec, top_k)
-    return "\n".join([docs[i] for i in indices[0]])
+# 2. Embed and index
+embedder = SentenceTransformer(MODEL_NAME)
+embs = embedder.encode(texts, convert_to_numpy=True)
+index = faiss.IndexFlatIP(EMBED_DIM)
+faiss.normalize_L2(embs)
+index.add(embs)
+
+def get_context(query: str, top_k: int = 3) -> str:
+    q_emb = embedder.encode([query], convert_to_numpy=True)
+    faiss.normalize_L2(q_emb)
+    D, I = index.search(q_emb, top_k)
+    return "\n\n".join(texts[i] for i in I[0])

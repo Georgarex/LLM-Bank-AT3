@@ -1,3 +1,5 @@
+# prompt_model.py
+
 import os, glob, torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
@@ -56,7 +58,7 @@ def main():
             if not query or query.lower() in ("exit", "quit"):
                 break
             # if you have a RAG retriever, call it here to get `context`
-            context = ""  
+            context = ""
             response = generate_response(tokenizer, model, device, query, context)
             print(f"Assistant: {response}\n")
     except (KeyboardInterrupt, EOFError):

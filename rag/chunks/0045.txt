@@ -1,0 +1,2 @@
+Q: What should I do if I receive a suspicious email claiming to be from the bank?
+A: Do not click any links or provide personal information. Forward the email to our fraud department at fraud@example.com for investigation.
