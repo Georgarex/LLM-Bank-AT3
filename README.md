@@ -13,7 +13,7 @@ POST /ask { "query": "What’s the early repayment penalty on a home loan?" }
 ## 📦 Setup
 ```bash
 pip install -r requirements.txt
-python rag/chunker.py     # Embed and index PDF docs
+python prepare_data.py # To the data
 python finetune/train.py  # Fine-tune Mistral
 uvicorn app:app --reload  # Launch API
 ```
