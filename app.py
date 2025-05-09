@@ -1,66 +1,83 @@
-import os, glob, torch
-from transformers import AutoTokenizer, AutoModelForCausalLM
+from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel
+from typing import Optional
 
-def find_latest_checkpoint(base_dir="./model/gpt_model"):
-    # look for folders named checkpoint-*
-    paths = glob.glob(os.path.join(base_dir, "checkpoint-*"))
-    if not paths:
-        raise FileNotFoundError(f"No checkpoints found in {base_dir}")
-    # sort by the numeric suffix
-    paths.sort(key=lambda p: int(p.rsplit("-",1)[-1]))
-    return paths[-1]
+# Import functions from your prompt_model.py
+from prompt_model import find_latest_checkpoint, load_model, generate_response
 
-def load_model(checkpoint_dir):
-    tokenizer = AutoTokenizer.from_pretrained(checkpoint_dir)
-    if tokenizer.pad_token is None:
-        tokenizer.pad_token = tokenizer.eos_token
-    model = AutoModelForCausalLM.from_pretrained(checkpoint_dir)
-    model.eval()
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    model.to(device)
-    return tokenizer, model, device
+# Import RAG retriever if you have one
+# from rag.retriever import get_context 
 
-def generate_response(tokenizer, model, device, user_query, context=""):
-    prompt = f"<s>[INST] {context}\n{user_query} [/INST]"
-    inputs = tokenizer(
-        prompt,
-        return_tensors="pt",
-        truncation=True,
-        padding=True,
-        max_length=512
-    ).to(device)
+# Create the FastAPI app instance - THIS is what uvicorn looks for
+app = FastAPI(title="Banking Q&A API")
 
-    out = model.generate(
-        **inputs,
-        max_new_tokens=128,
-        do_sample=True,
-        top_p=0.95,
-        temperature=0.7,
-        repetition_penalty=1.2,
-        pad_token_id=tokenizer.eos_token_id
-    )
-    decoded = tokenizer.decode(out[0], skip_special_tokens=True)
-    # extract only the answer part
-    return decoded.split("[/INST]")[-1].strip()
+# Add CORS middleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
-def main():
-    ckpt = find_latest_checkpoint()
-    tokenizer, model, device = load_model(ckpt)
+# Define request and response models
+class QueryRequest(BaseModel):
+    query: str
+    use_rag: bool = True
+    top_k: int = 3
 
-    print(">> Loaded checkpoint:", ckpt)
-    print(">> Type your query and press Enter. (type 'exit' or Ctrl-C to quit)\n")
+class QueryResponse(BaseModel):
+    response: str
+    context: Optional[str] = None
 
+# Load model at startup
+@app.on_event("startup")
+async def startup_event():
     try:
-        while True:
-            query = input("User: ").strip()
-            if not query or query.lower() in ("exit", "quit"):
-                break
-            # if you have a RAG retriever, call it here to get `context`
-            context = ""  
-            response = generate_response(tokenizer, model, device, query, context)
-            print(f"Assistant: {response}\n")
-    except (KeyboardInterrupt, EOFError):
-        print("\nExiting.")
+        checkpoint_dir = find_latest_checkpoint()
+        tokenizer, model, device = load_model(checkpoint_dir)
+        
+        # Store in app state for reuse
+        app.state.tokenizer = tokenizer
+        app.state.model = model
+        app.state.device = device
+        
+        print(f"Model loaded successfully from {checkpoint_dir}")
+    except Exception as e:
+        print(f"Error loading model: {str(e)}")
 
+@app.get("/")
+async def root():
+    return {"message": "Banking Q&A API is running"}
+
+@app.post("/query", response_model=QueryResponse)
+async def query(request: QueryRequest):
+    """Process a question and return the answer"""
+    try:
+        # Get context if using RAG (uncomment if you have a retriever)
+        context = ""
+        # if request.use_rag:
+        #     from rag.retriever import get_context
+        #     context = get_context(request.query, top_k=request.top_k)
+        
+        # Generate response
+        response = generate_response(
+            app.state.tokenizer,
+            app.state.model,
+            app.state.device,
+            request.query,
+            context
+        )
+        
+        return QueryResponse(
+            response=response,
+            context=context if context else None
+        )
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error generating response: {str(e)}")
+
+# This allows running directly with "python app.py"
 if __name__ == "__main__":
-    main()
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)
