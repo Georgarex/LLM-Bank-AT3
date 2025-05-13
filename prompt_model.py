@@ -18,6 +18,7 @@ def load_model(checkpoint_dir):
         tokenizer.pad_token = tokenizer.eos_token
     model = AutoModelForCausalLM.from_pretrained(checkpoint_dir)
     model.eval()
+    
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model.to(device)
     return tokenizer, model, device
