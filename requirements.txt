@@ -9,3 +9,9 @@ google-api-python-client     # if you still need web snippets
 huggingface_hub[hf_xet]      # for faster download
 accelerate>=0.26.0
 accelerate>=0.26.0
+gradio
+# for rouge-l score evluation metric...
+evaluate
+rouge_score
+nltk
+absl-py
