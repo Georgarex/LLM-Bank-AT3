@@ -1,11 +1,27 @@
+# Web server
 fastapi
 uvicorn[standard]
-torch
-transformers
-datasets
-sentence-transformers
-faiss-cpu
-google-api-python-client     # if you still need web snippets
-huggingface_hub[hf_xet]      # for faster download
-accelerate>=0.26.0
+
+# Core ML packages
+torch>=2.0.0
+transformers>=4.30.0
+datasets>=2.12.0
+evaluate>=0.4.0
+nltk>=3.8.1
+sentence-transformers>=2.2.2
+faiss-cpu>=1.7.4
+
+# Visualization and data analysis
+pandas>=2.0.0
+matplotlib>=3.7.1
+seaborn>=0.12.2
+numpy>=1.24.3
+
+# UI
+gradio>=3.50.0
+
+# Utilities
+psutil>=5.9.5
+google-api-python-client>=2.97.0
+huggingface_hub[hf_xet]>=0.16.4
 accelerate>=0.26.0

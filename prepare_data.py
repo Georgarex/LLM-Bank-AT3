@@ -23,7 +23,6 @@ def prepare_data():
     print(f"Created {num_chunks} text chunks")
     
     print("\nData preparation complete!")
-    print("You can now run the server with: uvicorn app:app --reload")
 
 if __name__ == "__main__":
     prepare_data()
