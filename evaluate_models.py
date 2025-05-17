@@ -262,7 +262,7 @@ def main():
     print("\nDetailed evaluation results saved to:", result_file)
     
     # Create CSV summary for easy analysis
-    csv_file = f"evaluation_results/summary_{timestamp}.csv"
+    csv_file = f"evaluation_results/summary.csv"
     with open(csv_file, 'w') as f:
         f.write("Model,RAG,ROUGE-1,ROUGE-2,ROUGE-L,BLEU,ExactMatch,Latency\n")
         for result in results:

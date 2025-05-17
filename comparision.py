@@ -17,7 +17,7 @@ os.makedirs("evaluation_results/figures", exist_ok=True)
 
 # Load the data from CSV
 # You can replace this with your CSV file path
-data = pd.read_csv("evaluation_results/summary_20250514-182424.csv")
+data = pd.read_csv("evaluation_results/summary.csv")
 
 # For better visualization, create a combined model+RAG column
 data['Model_Config'] = data['Model'] + ' (' + data['RAG'].map({True: 'with RAG', False: 'without RAG'}) + ')'
