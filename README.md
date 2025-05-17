@@ -1,9 +1,6 @@
 # 🏦 Banking LLM: Fine-tuned + RAG Assistant
 
 A production-ready framework that combines:
-- 🔧 Fine-tuned LLM on bank-specific FAQs
-- 🔎 Retrieval-Augmented Generation from real bank docs
-- 🚀 FastAPI serving endpoint
 
 ## 📦 Setup
 
@@ -28,6 +25,7 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 
 3. Install dependencies
 ```bash
+# create & activate your venv
 pip install -r requirements.txt
 ```
 
