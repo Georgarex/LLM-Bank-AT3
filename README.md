@@ -1,7 +1,8 @@
 # 🏦 Banking LLM: Fine-tuned + RAG Assistant
 
-Models are in model/
-Evaluation charts and results are in evaluation_results/
+## Results
+- Models are in model/
+- Evaluation charts and results are in evaluation_results/
 
 A production-ready framework that combines:
 
