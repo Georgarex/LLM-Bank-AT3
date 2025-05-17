@@ -193,7 +193,7 @@ def main():
     # Define model configurations
     models = [
         ("GPT-2", "./model/gpt_model", False),
-        ("DistilGPT-2 LoRA", "./model/gpt_model", False),
+        ("DistilGPT-2 LoRA", "./model/distilgpt2_model", False),
         ("FLAN-T5 Small", "google/flan-t5-small", True),
     ]
     

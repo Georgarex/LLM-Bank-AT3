@@ -1,1 +1,3 @@
 model/gpt_model/
+model/
+__pycache__/
