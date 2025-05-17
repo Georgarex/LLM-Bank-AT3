@@ -1,0 +1,242 @@
+[
+  {
+    "model": "GPT-2",
+    "rag": false,
+    "metrics": {
+      "rouge1_f1": 0.23835594384270253,
+      "rouge2_f1": 0.08361153465545948,
+      "rougeL_f1": 0.16716536176828214,
+      "bleu": 0.029950026862754886,
+      "exact_match": 0.0,
+      "avg_latency": 3.086765909194946,
+      "num_samples": 15
+    },
+    "examples": [
+      {
+        "prompt": "What should I do if I suspect fraudulent activity on my account?",
+        "reference": "If you suspect fraudulent activity, contact our customer service immediately to report it and secure your account.",
+        "prediction": "Do not check your online banking credentials, or contact customer service for assistance.</p> Verify the information provided by a credit card issuer and provide any necessary documentation to ensure it is correct. Contact our fraud department immediately with details of suspected violations</a><br /> To report suspicious activities through automated means, log into one's email address section in order take action against those responsible from within 24 hours.</li></tbody>\" }, \"$:/core/modules\\urllib-signup:function(request) { // Set up automatic verification using personal identification number (PIN)</script>(var request = require('purltimertoken'); var"
+      },
+      {
+        "prompt": "What are your policies on account overdraft?",
+        "reference": "Our policies on overdraft protection and fees can be found on our website or by contacting customer service for specific details.",
+        "prediction": "Account requirements and procedures can be found in our online banking documentation. Please review the information provided with each card issuer or contact customer service if you have any questions.</p> <div><strong>\"You may require additional accounts for specific needs.\"</span></li>] If a new, available debit/credit option is offered by one of these credit unions, please visit their website to discuss options between various cards types.</signature>. </form >"
+      },
+      {
+        "prompt": "How do I transfer money between accounts?",
+        "reference": "Log into your online banking account or mobile app, select 'Transfer Funds,' choose the accounts, and enter the amount you wish to transfer.",
+        "prediction": "To complete the transfers, contact customer service or visit a branch to discuss your options with an account officer.</p> Please note that fees and procedures may apply. For more information on charges for international transactions please refer back at our website</a>.\n\n- What is my financial advisor fee schedule? - Fees are detailed in accordance up front of each transaction amount.<br /> Our advisors' rates can be found online through various payment services including Visa\u00ae MasterCard\u00ae, Discover\u2122 Cards, American Express \u00ae Checking Account Transfer Protocol (ATTP), Credit Suisse Rewards Card Solutions Inc.</b></li><strong>\"Your personal finance adviser will review all"
+      },
+      {
+        "prompt": "Do you offer investment services?",
+        "reference": "Yes, we offer investment services. Contact us or visit our website to learn more about our investment options and services.",
+        "prediction": "Yes, we do. We provide various retirement planning and account management products for businesses including personal finance tools to help manage your finances.</sa> Our portfolio of options includes 401(k) plans that can be used by up-and\u2011coming professionals</a><br /> </div></li>\" }, \"investment advisers\" : { \"[RESCUE][IMPORTANT] Do not visit any branch or office if a business is unavailable due the closure of our banking department.\"} [/ITEM][/SCRIPT: Please review all information about this financial advisor on LinkedIn at https://www!linkedin/department/. Alternatively contact customer"
+      },
+      {
+        "prompt": "What are your policies on account closure fees?",
+        "reference": "Account closure fees, if any, are detailed in our fee schedule. Please review the information on our website or contact customer service.",
+        "prediction": "Account closures can be found in our fee schedule. Please review the information provided with each transaction.</p>\n\n'1) Fees for accounts closing and credit card bills may vary by location.'</url><br /> '2} Contact customer service to discuss any specific charges or procedures available at financial planning agencies.</b></div>\" <<set $depositAmount = \"0\">> <span class=\"description\">AccountClosure Charges & Procedures </strong>(Available through online banking)</sp>, select a link below:</a>. We offer various options, including temporary suspension of all activity immediately following an unauthorized entry into your personal bank wallet from"
+      }
+    ]
+  },
+  {
+    "model": "GPT-2",
+    "rag": true,
+    "metrics": {
+      "rouge1_f1": 0.09214553949742645,
+      "rouge2_f1": 0.015581530360267541,
+      "rougeL_f1": 0.0719148922783637,
+      "bleu": 0.0,
+      "exact_match": 0.0,
+      "avg_latency": 2.4422614415486654,
+      "num_samples": 15
+    },
+    "examples": [
+      {
+        "prompt": "What should I do if I suspect fraudulent activity on my account?",
+        "reference": "If you suspect fraudulent activity, contact our customer service immediately to report it and secure your account.",
+        "prediction": "Report suspected criminal activities by logging into online banking accounts with valid identification documents.</b> Reports detected in this manner may result of additional charges being assessed through KYC procedures including interest rate increase notifications</i></li> [INST]: Review all available details about authorized users' credit card transactions before making an official transaction between debit cards.</p><div class=\"wp-content\">Contact us within one business day after receiving notification confirming that there is no threat associatedwith such actions using automated means.</span>\" <ul id= \"contact_privacy\" ><img src=/photos/login1.jpg alt=Login Name = Password & Account"
+      },
+      {
+        "prompt": "What are your policies on account overdraft?",
+        "reference": "Our policies on overdraft protection and fees can be found on our website or by contacting customer service for specific details.",
+        "prediction": "We offer various options available through online banking services such as Visa\u00ae Checking\u00ae, MasterCard\u2122 MoneyPak \u00ae Card Security & Credit Cards, Discover Corporation Savings Account Protection Fund*, Citibank Rewards Plan Payment Method** and more.</i>\n) Contact Customer Service if any of the following apply</a></li><br /> How do my accounts receive alerts when an unusual activity occurs while using one another's mobile devices? <strong>\"Alert notifications may appear immediately upon notification that unauthorized access has occurred.\"</span> <<set $warning =<<qualify \\\"Account Restrictions\\\">>\\r\n\n- Alert Notification is only sent once every"
+      },
+      {
+        "prompt": "How do I transfer money between accounts?",
+        "reference": "Log into your online banking account or mobile app, select 'Transfer Funds,' choose the accounts, and enter the amount you wish to transfer.",
+        "prediction": "To schedule scheduled direct deposit payments on any of our branches, log onto one of these payment methods.</p>\n\n 1) Select from various options available through Paypal's branch credit cards section for easy access across all financial services including checking & savings products.</a></li><br /></div> You may also request assistance with international transactions via checkouts at checkout (where applicable) using Visa\u00ae MasterCard\u2122 ID verification procedures.<sup>\"Transfers are only accepted if approved in writing.\"</su> <ul class=\"form-tab\">Send funds directly over prepaid debit card charges toward authorized fees such as ATM fee increase </"
+      },
+      {
+        "prompt": "Do you offer investment services?",
+        "reference": "Yes, we offer investment services. Contact us or visit our website to learn more about our investment options and services.",
+        "prediction": "No 'investment consulting' is available on all your personal finance accounts.</p>"
+      },
+      {
+        "prompt": "What are your policies on account closure fees?",
+        "reference": "Account closure fees, if any, are detailed in our fee schedule. Please review the information on our website or contact customer service.",
+        "prediction": "Fees include all applicable transaction charges including interest rate adjustments.[/ST][/IMPORTANT NOTE]: Accounts with high amounts of accounts closed may incur higher rates due under various circumstances.</p>\n\n- Contact Customer Service"
+      }
+    ]
+  },
+  {
+    "model": "DistilGPT-2 LoRA",
+    "rag": false,
+    "metrics": {
+      "rouge1_f1": 0.23791792807394546,
+      "rouge2_f1": 0.07875616243520314,
+      "rougeL_f1": 0.1686124940032194,
+      "bleu": 0.029717034660621446,
+      "exact_match": 0.0,
+      "avg_latency": 3.0563031832377114,
+      "num_samples": 15
+    },
+    "examples": [
+      {
+        "prompt": "What should I do if I suspect fraudulent activity on my account?",
+        "reference": "If you suspect fraudulent activity, contact our customer service immediately to report it and secure your account.",
+        "prediction": "Do not provide any personal information. We will process the suspicious transactions and take steps to immediately report it.</ref> Report fraud by contacting customer service or visiting a branch for assistance with your investigation</source></div><script async src=\"//platform1-document/antiwalletjsv2zZHbXuY5m0KFpV8QAoCxk9gSJ3M4UdLw==\">[LOGIN] Verify email address: (optional)</url>:\\/AntiWalletJS\\r300&privkey=12345678[/FILE][/FILTER][FRONT],"
+      },
+      {
+        "prompt": "What are your policies on account overdraft?",
+        "reference": "Our policies on overdraft protection and fees can be found on our website or by contacting customer service for specific details.",
+        "prediction": "Account settings and procedures can be found in our online banking section. Please review the information contained with you before accessing any of these services.</url>"
+      },
+      {
+        "prompt": "How do I transfer money between accounts?",
+        "reference": "Log into your online banking account or mobile app, select 'Transfer Funds,' choose the accounts, and enter the amount you wish to transfer.",
+        "prediction": "To request a new account, log into your online banking app and visit the 'Transfer Funds' section to complete any necessary paperwork.</ref> Request an Account by contacting customer service or visiting our website for assistance with completing fees.</source></div><br /> Can you provide more information about my transfers through credit reporting agencies? Yes we offer various options available on mobile devices such as smartphones.</p>\" </li> <ul class=\"article-page\"> Please review all of our financial services details in order if there are concerns regarding unauthorized access.</ol>] <<if $tw->checkoutAccountInformation(); == false>> You can check out"
+      },
+      {
+        "prompt": "Do you offer investment services?",
+        "reference": "Yes, we offer investment services. Contact us or visit our website to learn more about our investment options and services.",
+        "prediction": "Yes, we do. Contact us to schedule an appointment with one of our advisors.</sc> Our advisor can discuss your financial needs and options for retirement planning or access personal finance resources through online banking platform</a></li><strong>\"Yes, I have a 401(k) account in my name.\"</span> Do not set up accounts by logging into any other website using the same password as its authorized user\">No, only log-in under 'Account Management' on all websites located within 5 business days after receiving payment from bank.''. </div >\n\n 1. How should i apply for savings plans?: Apply online at checkout"
+      },
+      {
+        "prompt": "What are your policies on account closure fees?",
+        "reference": "Account closure fees, if any, are detailed in our fee schedule. Please review the information on our website or contact customer service.",
+        "prediction": "Account closures can be found in our fee schedule. Please review the information provided with each transaction.</ref> Fees for accounts closing vary by jurisdiction and type of business activity.</source><br /></p></li> <script async src=\"//platform1-ud6xlvq9zjwZtQAoJhKfY2D0U/ajax_execution/_scheduler/?action=detail&id=20383454\">Close all transactions through a secure online banking portal or mobile app to avoid any further charges from customers visiting such websites during their scheduled withdrawal periods.</url></code"
+      }
+    ]
+  },
+  {
+    "model": "DistilGPT-2 LoRA",
+    "rag": true,
+    "metrics": {
+      "rouge1_f1": 0.0710125142293338,
+      "rouge2_f1": 0.007270717815490806,
+      "rougeL_f1": 0.05739936208294397,
+      "bleu": 0.0,
+      "exact_match": 0.0,
+      "avg_latency": 3.044077205657959,
+      "num_samples": 15
+    },
+    "examples": [
+      {
+        "prompt": "What should I do if I suspect fraudulent activity on my account?",
+        "reference": "If you suspect fraudulent activity, contact our customer service immediately to report it and secure your account.",
+        "prediction": "Report suspected activities by contacting banking experts about their investigations.</a> To view an alert with details of each transaction log visit https://www[IPP/HTTPS].psc/#alert</p><br />Report alleged illegal transactions through online financial reporting agencies such as Credit Suisse & Co., Bankrate\u00ae, Experian\u00ae!, Cardify!"
+      },
+      {
+        "prompt": "What are your policies on account overdraft?",
+        "reference": "Our policies on overdraft protection and fees can be found on our website or by contacting customer service for specific details.",
+        "prediction": "Account underwriting limits may apply through online banking.</a> Apply with us at any of the following locations if available in both countries: Canada (mainland)</p><br /> Contact Customer Service immediately about applying using this option! For assistance accessing accounts abroad visit www .info/underwriterlimitoverdraft </i> <script type=\"text/?type=IMG&moduleId=2157442788376560\"> Activate from within one of these options via mobile app provided\\u003ca href=\\\"https://www...\\\">Visit a Branch To Request Additional Information About Underwriters' Restrictions & Procedures \u00bb</body"
+      },
+      {
+        "prompt": "How do I transfer money between accounts?",
+        "reference": "Log into your online banking account or mobile app, select 'Transfer Funds,' choose the accounts, and enter the amount you wish to transfer.",
+        "prediction": "To schedule auto-transactions on any of our platforms, visit one's website for details.</a>\n\n\\</SYSTEM>\"Sync Your Account Information with Our Platform\" will automatically update information about available funds through scheduled payments.\"[/MSFT]\"When requested via email, we may also provide instructions regarding financial planning options such as fees.''"
+      },
+      {
+        "prompt": "Do you offer investment services?",
+        "reference": "Yes, we offer investment services. Contact us or visit our website to learn more about our investment options and services.",
+        "prediction": "We are committed in providing the highest quality advice on business strategy.</p>\n\n (Reporting by John Smith)"
+      },
+      {
+        "prompt": "What are your policies on account closure fees?",
+        "reference": "Account closure fees, if any, are detailed in our fee schedule. Please review the information on our website or contact customer service.",
+        "prediction": "Fees from accounts with more than one active user can be found at www-verifyaccountstatements/terms of service.</p>\n\n'Mechanisms by Functionality' may vary based upon personal circumstances such as location,'</description><strong></li> 'Additional procedures available through online banking services will apply.'</span><br /> For assistance resolving various issues affecting both parties involved during business hours, please consult an experienced financial advisor immediately following transactions between customers using their debit cards.''. <<NOTE:# INSTRUCTIONS ON LEGAL COUNSELING TERMS AND CONDITION FOR DUTY ACCESS THROUGH LOAN"
+      }
+    ]
+  },
+  {
+    "model": "FLAN-T5 Small",
+    "rag": false,
+    "metrics": {
+      "rouge1_f1": 0.15437537950695845,
+      "rouge2_f1": 0.01568627450980392,
+      "rougeL_f1": 0.12990118184764282,
+      "bleu": 0.016104714949636202,
+      "exact_match": 0.0,
+      "avg_latency": 0.3157437960306803,
+      "num_samples": 15
+    },
+    "examples": [
+      {
+        "prompt": "What should I do if I suspect fraudulent activity on my account?",
+        "reference": "If you suspect fraudulent activity, contact our customer service immediately to report it and secure your account.",
+        "prediction": "Go to https://www.facebook.com/fortnights/default/psg/ascn/e-total/problemset/default/psg/ascn/psg/ascn/ascn/report/problem/3344.html"
+      },
+      {
+        "prompt": "What are your policies on account overdraft?",
+        "reference": "Our policies on overdraft protection and fees can be found on our website or by contacting customer service for specific details.",
+        "prediction": "Your account overdraft rules are set by a set of rules for the use of the system."
+      },
+      {
+        "prompt": "How do I transfer money between accounts?",
+        "reference": "Log into your online banking account or mobile app, select 'Transfer Funds,' choose the accounts, and enter the amount you wish to transfer.",
+        "prediction": "Transfer money between accounts to a bank or bank account"
+      },
+      {
+        "prompt": "Do you offer investment services?",
+        "reference": "Yes, we offer investment services. Contact us or visit our website to learn more about our investment options and services.",
+        "prediction": "no"
+      },
+      {
+        "prompt": "What are your policies on account closure fees?",
+        "reference": "Account closure fees, if any, are detailed in our fee schedule. Please review the information on our website or contact customer service.",
+        "prediction": "a debit card is required to pay your account back for the amount you use when you are using it."
+      }
+    ]
+  },
+  {
+    "model": "FLAN-T5 Small",
+    "rag": true,
+    "metrics": {
+      "rouge1_f1": 0.8300649179497062,
+      "rouge2_f1": 0.7813198828845878,
+      "rougeL_f1": 0.8172454086516772,
+      "bleu": 0.7348653442261073,
+      "exact_match": 0.0,
+      "avg_latency": 0.4436038494110107,
+      "num_samples": 15
+    },
+    "examples": [
+      {
+        "prompt": "What should I do if I suspect fraudulent activity on my account?",
+        "reference": "If you suspect fraudulent activity, contact our customer service immediately to report it and secure your account.",
+        "prediction": "A: Contact our customer service immediately to report it and secure your account. ---"
+      },
+      {
+        "prompt": "What are your policies on account overdraft?",
+        "reference": "Our policies on overdraft protection and fees can be found on our website or by contacting customer service for specific details.",
+        "prediction": "A: Our policies on overdraft protection and fees can be found on our website or by contacting customer service for specific details. ---"
+      },
+      {
+        "prompt": "How do I transfer money between accounts?",
+        "reference": "Log into your online banking account or mobile app, select 'Transfer Funds,' choose the accounts, and enter the amount you wish to transfer.",
+        "prediction": "A: Log into your online banking account or mobile app, select 'Transfer Funds,' choose the accounts, and enter the amount you wish to transfer. ---"
+      },
+      {
+        "prompt": "Do you offer investment services?",
+        "reference": "Yes, we offer investment services. Contact us or visit our website to learn more about our investment options and services.",
+        "prediction": "A: Yes, we offer investment services. ---"
+      },
+      {
+        "prompt": "What are your policies on account closure fees?",
+        "reference": "Account closure fees, if any, are detailed in our fee schedule. Please review the information on our website or contact customer service.",
+        "prediction": "A: Account inactivity fees and policies are detailed in our fee schedule. Please review the information on our website or contact customer service for details. ---"
+      }
+    ]
+  }
+]

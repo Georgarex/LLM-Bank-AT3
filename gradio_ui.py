@@ -34,7 +34,7 @@ def log_memory():
 # Mapping between user-friendly names and checkpoint folders or model IDs
 MODEL_OPTIONS = {
     "GPT-2": "./model/gpt_model",
-    "DistilGPT-2 LoRA": "./model/distilgpt2_lora_model",
+    "DistilGPT-2 LoRA": "./model/gpt_model",
     "FLAN-T5 Small": "google/flan-t5-small"  # Added FLAN-T5 option
 }
 
